@@ -2,9 +2,8 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TextBoxTests {
 
@@ -30,5 +29,20 @@ public class TextBoxTests {
         $("#output #email").shouldHave(text("alex@egorov.com"));
         $("#output #currentAddress").shouldHave(text("Some street 1"));
         $("#output #permanentAddress").shouldHave(text("Another street 1"));
+    }
+    @Test
+    void fillPracticeForm () {
+        open("/automation-practice-form");
+        $("#firstName").setValue("Vitaliy");
+        $("#lastName").setValue("Arthas");
+        $("#userEmail").setValue("vitaliyarthasovich@mail.ru");
+        $("label[for='gender-radio-1']").click();
+        $("#userNumber").setValue("8999999999");
+        $("#dateOfBirthInput").click();
+        $("[aria-label = 'Choose Sunday, September 28th, 2025']").click();
+        $(".subjects-auto-complete__input").setValue("Maths").pressEnter();
+
+
+        //$("#gender-radio-1").shouldHave(attribute("checked"));
     }
 }
