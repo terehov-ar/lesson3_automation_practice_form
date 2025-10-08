@@ -40,8 +40,7 @@ public class TextBoxTests {
         $("#userNumber").setValue("8999999999");
         $("#dateOfBirthInput").click();
         $("[aria-label = 'Choose Sunday, September 28th, 2025']").click();
-        $(".subjects-auto-complete__input").setValue("Maths").pressEnter();
-
+        $("#subjectsInput").setValue("Maths").pressEnter();
 
         //$("#gender-radio-1").shouldHave(attribute("checked"));
     }
