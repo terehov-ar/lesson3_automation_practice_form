@@ -48,4 +48,18 @@ public class TextBoxTests {
         $("tbody").$("tr",9).shouldHave(text("State and City")).shouldHave(text("Haryana Karnal"));
     }
 
+    @Test
+    void fillFormTest() {
+        open("/text-box");
+        $("#userName").setValue("Alex");
+        $("#userEmail").setValue("alex@egorov.com");
+        $("#currentAddress").setValue("Some street 1");
+        $("#permanentAddress").setValue("Another street 1");
+        $("#submit").click();
+
+        $("#output #name").shouldHave(text("Alex"));
+        $("#output #email").shouldHave(text("alex@egorov.com"));
+        $("#output #currentAddress").shouldHave(text("Some street 1"));
+        $("#output #permanentAddress").shouldHave(text("Another street 1"));
+    }
 }
