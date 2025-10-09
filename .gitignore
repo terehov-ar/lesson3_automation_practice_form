@@ -13,4 +13,5 @@ build/
 .gradle
 
 ### Logs ###
-*.log
+*.logCssXpathExamples.java
+SimpleJUnitTest.java
