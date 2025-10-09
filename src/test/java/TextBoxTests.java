@@ -41,6 +41,19 @@ public class TextBoxTests {
         $("#dateOfBirthInput").click();
         $("[aria-label = 'Choose Sunday, September 28th, 2025']").click();
         $("#subjectsInput").setValue("Maths").pressEnter();
+        $("label[for='hobbies-checkbox-2']").click();
+        $("#currentAddress").setValue("Venèsia");
+        $("#state").click();
+        $("#react-select-3-option-2").click();
+        $("#city").click();
+        $("#react-select-4-option-0").click();
+        $("#submit").click();
+        $("#uploadPicture").uploadFromClasspath("Locators_table.pdf");
+
+
+
+        //setTimeout(function(){debugger;}, 5000)
+
 
         //$("#gender-radio-1").shouldHave(attribute("checked"));
     }
